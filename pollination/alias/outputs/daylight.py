@@ -14,8 +14,28 @@ parse_daylight_factor_results = [
         handler=[
             IOAliasHandler(
                 language='python',
-                module='pollination_handlers.outputs.read_file',
-                function='read_DF_from_path'
+                module='pollination_handlers.outputs.daylight',
+                function='read_df_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""Annual daylight recipe output.
+
+Sort the .ill result files output by an annual daylight simulation.
+"""
+sort_annual_daylight_results = [
+    OutputAlias.any(
+        name='annual_daylight',
+        description='Annual daylight result files.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='sort_ill_from_folder'
             )
         ]
     )
