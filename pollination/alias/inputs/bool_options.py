@@ -54,3 +54,21 @@ is_residential_input = [
         ]
     )
 ]
+
+
+"""Alias for yes/no inputs about whether a comfort map should be for SET."""
+write_set_map_input = [
+    InputAlias.any(
+        name='write_set_map',
+        description='Either a boolean or one of two text strings: write-op-map, '
+        'write-set-map.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='write_set_map_to_str'
+            )
+        ]
+    )
+]
