@@ -40,3 +40,51 @@ sort_annual_daylight_results = [
         ]
     )
 ]
+
+
+daylight_autonomy_results = [
+    OutputAlias.any(
+        name='DA',
+        description='Daylight autonomy results.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_da_from_folder'
+            )
+        ]
+    )
+]
+
+
+continuous_daylight_autonomy_results = [
+    OutputAlias.any(
+        name='cDA',
+        description='Continuous daylight autonomy results.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_cda_from_folder'
+            )
+        ]
+    )
+]
+
+
+useful_daylight_illuminance_results = [
+    OutputAlias.any(
+        name='UDI',
+        description='Useful daylight autonomy results.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_udi_from_folder'
+            )
+        ]
+    )
+]
