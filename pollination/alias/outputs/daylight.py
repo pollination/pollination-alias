@@ -22,6 +22,26 @@ parse_daylight_factor_results = [
 ]
 
 
+"""Direct sun hours recipe output.
+
+The results are separated by line.
+"""
+parse_hour_results = [
+    OutputAlias.any(
+        name='direct_sun_hours',
+        description='Hours of direct sun.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_hours_from_folder'
+            )
+        ]
+    )
+]
+
+
 """Annual daylight recipe output.
 
 Sort the .ill result files output by an annual daylight simulation.
