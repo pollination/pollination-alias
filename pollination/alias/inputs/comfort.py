@@ -93,7 +93,8 @@ pmv_comfort_par_input = [
         'considered acceptable/comfortable. The default will assume a '
         'PPD threshold of 10 percent and no absolute humidity constraints.',
         default='--ppd-threshold 10',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
 
@@ -107,7 +108,8 @@ adaptive_comfort_par_input = [
         'considered acceptable/comfortable. The default will use ASHRAE-55 '
         'adaptive comfort criteria.',
         default='--standard ASHRAE-55',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
 
@@ -119,7 +121,8 @@ utci_comfort_par_input = [
         description='UTCIParameter string to customize the assumptions of '
         'the UTCI comfort model.',
         default='--cold 9 --heat 26',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
 
@@ -134,7 +137,8 @@ solar_body_par_indoor_input = [
         'absorptivity and a human subject always has their back to the sun '
         'at a 45-degree angle (SHARP = 135).',
         default='--posture seated --sharp 135 --absorptivity 0.7 --emissivity 0.95',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
 
@@ -149,6 +153,7 @@ solar_body_par_outdoor_input = [
         'absorptivity and a human subject always has their back to the sun '
         'at a 45-degree angle (SHARP = 135).',
         default='--posture standing --sharp 135 --absorptivity 0.7 --emissivity 0.95',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
