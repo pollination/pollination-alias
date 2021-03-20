@@ -9,7 +9,6 @@ run_period_input = [
         description='An AnalysisPeriod to set the start and end dates of the '
         'simulation. If None, the simulation will be annual.',
         default='',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]

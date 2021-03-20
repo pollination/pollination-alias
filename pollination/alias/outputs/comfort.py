@@ -86,8 +86,7 @@ thermal_condition_output = [
         '"HB Read Thermal Matrix" component to parse detailed results into '
         'Grasshopper. -1 indicates unacceptably cold conditions. +1 indicates '
         'unacceptably hot conditions. 0 indicates neutral (comfortable) conditions.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -100,8 +99,7 @@ operative_temp_output = [
         'sensor grid at each time step of the analysis. This can be connected to the '
         '"HB Read Thermal Matrix" component to parse detailed results into Grasshopper. '
         'Values are in Celsius.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -116,8 +114,7 @@ degrees_neutral_output = [
         'component to parse detailed results into Grasshopper. This can be '
         'used to understand not just whether conditions are acceptable but '
         'how uncomfortably hot or cold they are.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -132,8 +129,7 @@ operative_or_set_output = [
         'Standard Effective Temperature (SET). This can be connected to the '
         '"HB Read Thermal Matrix" component to parse detailed results into '
         'Grasshopper. Values are in Celsius.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -147,8 +143,7 @@ pmv_output = [
         'to the "HB Read Thermal Matrix" component to parse detailed results '
         'into Grasshopper. This can be used to understand not just whether '
         'conditions are acceptable but how uncomfortably hot or cold they are.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -161,8 +156,7 @@ utci_output = [
         '(UTCI) temperatures for each sensor grid at each time step of the analysis. '
         'This can be connected to the "HB Read Thermal Matrix" component to '
         'parse detailed results into Grasshopper. Values are in Celsius.',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -188,7 +182,6 @@ utci_category_output = [
         '+3 = strong heat stress. '
         '+4 = very strong heat stress. '
         '+5 = extreme heat stress',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]

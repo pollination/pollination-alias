@@ -9,8 +9,7 @@ rad_par_annual_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -ad 5000 -lw 2e-05).',
         default='-ab 2 -ad 5000 -lw 2e-05',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -22,8 +21,7 @@ rad_par_daylight_factor_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -aa 0.1 -ad 2048 -ar 64).',
         default='-ab 2 -aa 0.1 -ad 2048 -ar 64',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
 
@@ -40,7 +38,6 @@ daylight_thresholds_input = [
         'to change the upper threshold to 2000 lux you should use -ut 2000 '
         'as the input. (Default: -t 300 -lt 100 -ut 3000).',
         default='-t 300 -lt 100 -ut 3000',
-        platform=['grasshopper'],
-        handler=[]
+        platform=['grasshopper']
     )
 ]
