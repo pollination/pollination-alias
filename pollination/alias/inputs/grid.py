@@ -11,7 +11,8 @@ grid_filter_input = [
         'only the sensor grids that have an identifier that starts with '
         'first_floor_. By default, all grids in the model will be simulated.',
         default='*',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
 
@@ -27,6 +28,7 @@ sensor_count_input = [
         'If the number is too low, the overhad of splitting the grid will not be worth '
         'the time gained through parallelization. (Default: 200).',
         default=200,
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[]
     )
 ]
