@@ -79,7 +79,7 @@ csp_output = [
 
 """Alias for thermal condition output."""
 thermal_condition_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='condition',
         description='A folder containing CSV maps of comfort conditions for each '
         'sensor grid at each time step of the analysis. This can be connected to the '
@@ -93,7 +93,7 @@ thermal_condition_output = [
 
 """Alias for operative temperature output."""
 operative_temp_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='op_temp',
         description='A folder containing CSV maps of Operative Temperature for each '
         'sensor grid at each time step of the analysis. This can be connected to the '
@@ -106,7 +106,7 @@ operative_temp_output = [
 
 """Alias for degrees from neutral temperature output."""
 degrees_neutral_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='deg_neut',
         description='A folder containing CSV maps of the degrees Celsius from the '
         'adaptive comfort neutral temperature for each sensor grid at each time step '
@@ -121,7 +121,7 @@ degrees_neutral_output = [
 
 """Alias for operative temperature or SET output."""
 operative_or_set_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='temperature',
         description='A folder containing CSV maps of Operative Temperature for each '
         'sensor grid at each time step of the analysis. Alternatively, if the '
@@ -136,7 +136,7 @@ operative_or_set_output = [
 
 """Alias for Predicted Mean Vote output."""
 pmv_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='pmv',
         description='A folder containing CSV maps of the Predicted Mean Vote (PMV) '
         'for each sensor grid at each time step of the analysis. This can be connected '
@@ -150,7 +150,7 @@ pmv_output = [
 
 """Alias for Universal Thermal Climate Index output."""
 utci_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='utci',
         description='A folder containing CSV maps of Universal Thermal Climate Index '
         '(UTCI) temperatures for each sensor grid at each time step of the analysis. '
@@ -163,7 +163,7 @@ utci_output = [
 
 """Alias for UTCI Categories output."""
 utci_category_output = [
-    OutputAlias.folder(
+    OutputAlias.any(
         name='category',
         description='A folder containing CSV maps of the heat/cold stress categories '
         'for each sensor grid at each time step of the analysis. This can be connected '
