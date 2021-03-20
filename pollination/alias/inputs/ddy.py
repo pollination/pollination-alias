@@ -6,7 +6,8 @@ from queenbee.io.common import IOAliasHandler
 ddy_input = [
     InputAlias.any(
         name='ddy',
-        description='Either a DDY python object or the path to a ddy or an epw file.',
+        description='The path to a .ddy file or an .epw file with design days to be '
+        'used for the initial sizing calculation.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
