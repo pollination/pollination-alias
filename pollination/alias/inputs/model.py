@@ -7,8 +7,9 @@ hbjson_model_input = [
     # grasshopper Alias
     InputAlias.any(
         name='model',
-        description='A path to a HBJSON file or a HB model object built with Python or'
-        ' dotnet libraries.',
+        description='A Honeybee Model to simulate or the path to a HBJSON file '
+        'of a Model. This can also be the path to a HBpkl file, though this is only '
+        'recommended for cases where the model is extremely large.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -41,8 +42,7 @@ dfjson_model_input = [
     # grasshopper Alias
     InputAlias.any(
         name='model',
-        description='A path to a DFJSON file or a DF model object built with Python '
-        ' libraries.',
+        description='A Dragonfly Model object or the path to a DFJSON file.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(

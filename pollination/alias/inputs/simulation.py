@@ -6,8 +6,11 @@ from queenbee.io.common import IOAliasHandler
 energy_simulation_parameter_input = [
     InputAlias.any(
         name='sim_par',
-        description='Either a honeybee-energy SimulationParameter object built with '
-        'Python or the path to a SimulationParameter JSON file.',
+        description='A SimulationParameter object that describes all of the setting for '
+        'the energy simulation. If None, some default simulation parameters will '
+        'automatically be used. This can also be the path to a SimulationParameter '
+        'JSON file.',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
