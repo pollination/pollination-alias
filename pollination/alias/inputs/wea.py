@@ -6,7 +6,8 @@ from queenbee.io.common import IOAliasHandler
 wea_input = [
     InputAlias.any(
         name='wea',
-        description='Either a Wea python object or the path to a wea or an epw file.',
+        description='A Wea object produced from the Wea components that are under '
+        'the Light Sources tab. This can also be the path to a .wea or a .epw file.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(

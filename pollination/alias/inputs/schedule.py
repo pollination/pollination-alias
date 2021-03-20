@@ -6,11 +6,12 @@ from queenbee.io.common import IOAliasHandler
 schedule_csv_input = [
     InputAlias.any(
         name='schedule',
-        description='An annual occupancy schedule, either as a path to a csv file, '
-        'a Ladybug Hourly Continuous Data Collection or a HB-Energy '
+        description='An annual occupancy schedule, either as a path to a csv file (with '
+        '8760 rows), a Ladybug Hourly Continuous Data Collection or a HB-Energy '
         'schedule object. This can also be the identifier of a schedule in '
         'your HB-Energy schedule library. Any value in this schedule that is '
         '0.1 or above will be considered occupied.',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
