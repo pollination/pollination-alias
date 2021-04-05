@@ -1,5 +1,4 @@
 from pollination_dsl.alias import InputAlias
-from queenbee.io.common import IOAliasHandler
 
 
 """Alias for simulation run periods."""
