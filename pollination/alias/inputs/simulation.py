@@ -21,3 +21,18 @@ energy_simulation_parameter_input = [
         ]
     )
 ]
+
+
+"""Alias for inputs that expect a IDF string input."""
+idf_additional_strings_input = [
+    InputAlias.any(
+        name='add_str',
+        description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
+        'An additional text string to be appended to the IDF before '
+        'simulation. The input should include complete EnergyPlus objects as a '
+        'single string following the IDF format. This input can be used to include '
+        'EnergyPlus objects that are not currently supported by honeybee.',
+        default='',
+        platform=['grasshopper']
+    )
+]
