@@ -8,8 +8,8 @@ filter_des_days_input = [
         name='filter_des_days',
         description='A boolean to note whether the ddy file should be filtered to only '
         'include 99.6 and 0.4 design days (True) or all design days in the ddy file '
-        'should be used (False).',
-        default=True,
+        'should be used (False). (Default: True).',
+        default='filter-des-days',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -32,7 +32,7 @@ use_multiplier_input = [
         'will be multiplied. If False, full geometry objects will be written '
         'for each and every story in the building such that all resulting '
         'multipliers will be 1. (Default: False).',
-        default=False,
+        default='full-geometry',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -50,8 +50,8 @@ is_residential_input = [
     InputAlias.any(
         name='is_residential',
         description='A boolean to note whether the model represents a residential '
-        'or nonresidential building.',
-        default=False,
+        'or nonresidential building. (Default: False).',
+        default='nonresidential',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -72,9 +72,9 @@ write_set_map_input = [
         'record Operative Temperature or Standard Effective Temperature (SET). '
         'SET is relatively intense to compute and so only recording Operative '
         'Temperature can greatly reduce run time, particularly when air speeds '
-        'are low. However, SET accounts for all 6 PMV model inputs and so is a '
-        'more representative "feels-like" temperature for the PMV model.',
-        default=False,
+        'are low. However, SET accounts for all 6 PMV model inputs and so is a more '
+        'representative "feels-like" temperature for the PMV model. (Default: False).',
+        default='write-op-map',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
