@@ -17,6 +17,23 @@ daylight_factor_results = [
                 function='read_df_from_folder'
             )
         ]
+    ),
+
+    # Rhino alias
+    OutputAlias.linked(
+        name='results',
+        platform=['rhino'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_df_from_folder'
+            ),
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadDfResultsToRhino'
+            )
+        ]
     )
 ]
 

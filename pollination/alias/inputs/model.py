@@ -17,7 +17,7 @@ hbjson_model_input = [
                 function='model_to_json'
             ),
             IOAliasHandler(
-                language='csharp', module='Pollination.Handlers',
+                language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
             )
         ]
@@ -29,7 +29,7 @@ hbjson_model_input = [
         platform=['rhino'],
         handler=[
             IOAliasHandler(
-                language='csharp', module='Pollination.Handlers',
+                language='csharp', module='Pollination.RhinoHandlers',
                 function='RhinoHBModelToJSON'
             )
         ]
