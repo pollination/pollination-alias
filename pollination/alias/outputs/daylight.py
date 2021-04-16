@@ -24,11 +24,13 @@ daylight_factor_results = [
         name='results',
         platform=['rhino'],
         handler=[
+            # Preload results 
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='read_df_from_folder'
             ),
+            # load preloaded outputs to Rhino with following method
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='LoadDfResultsToRhino'
