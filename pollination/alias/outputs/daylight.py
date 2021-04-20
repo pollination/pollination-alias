@@ -33,7 +33,7 @@ daylight_factor_results = [
             # load preloaded outputs to Rhino with following method
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
-                function='LoadDfResultsToRhino'
+                function='LoadMeshBasedResultsToRhino'
             )
         ]
     )
@@ -112,6 +112,24 @@ daylight_autonomy_results = [
                 function='read_da_from_folder'
             )
         ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='DA Results',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_da_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
+            )
+        ]
     )
 ]
 
@@ -130,6 +148,24 @@ continuous_daylight_autonomy_results = [
                 function='read_cda_from_folder'
             )
         ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='cDA Results',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_cda_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
+            )
+        ]
     )
 ]
 
@@ -146,6 +182,24 @@ udi_results = [
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='read_udi_from_folder'
+            )
+        ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='UDI Results',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_udi_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
             )
         ]
     )
@@ -167,6 +221,24 @@ udi_lower_results = [
                 function='read_udi_from_folder'
             )
         ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='UDI low Results',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_udi_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
+            )
+        ]
     )
 ]
 
@@ -184,6 +256,24 @@ udi_upper_results = [
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='read_udi_from_folder'
+            )
+        ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='UDI up Results',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_udi_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
             )
         ]
     )
