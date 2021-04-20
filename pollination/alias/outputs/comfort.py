@@ -23,6 +23,24 @@ tcp_output = [
                 function='read_comfort_percent_from_folder'
             )
         ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='TCP',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.comfort',
+                function='read_comfort_percent_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
+            )
+        ]
     )
 ]
 
@@ -48,6 +66,24 @@ hsp_output = [
                 function='read_comfort_percent_from_folder'
             )
         ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='HSP',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.comfort',
+                function='read_comfort_percent_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
+            )
+        ]
     )
 ]
 
@@ -71,6 +107,24 @@ csp_output = [
                 language='python',
                 module='pollination_handlers.outputs.comfort',
                 function='read_comfort_percent_from_folder'
+            )
+        ]
+    ),
+    # Rhino alias
+    OutputAlias.linked(
+        name='CSP',
+        platform=['rhino'],
+        handler=[
+            # Preload results 
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.comfort',
+                function='read_comfort_percent_from_folder'
+            ),
+            # load preloaded outputs to Rhino with following method
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='LoadMeshBasedResultsToRhino'
             )
         ]
     )
