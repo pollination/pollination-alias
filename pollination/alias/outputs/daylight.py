@@ -26,6 +26,12 @@ daylight_factor_results = [
         platform=['revit'],
         handler=[
             IOAliasHandler(
+                language='csharp',
+                module='Pollination.RevitHandlers',
+                function='ReadDaylightFactorResultsFromFolder'
+            ),
+
+            IOAliasHandler(
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='read_df_from_folder'
