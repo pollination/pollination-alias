@@ -18,6 +18,20 @@ daylight_factor_results = [
             )
         ]
     ),
+    
+    # Revit alias
+    OutputAlias.any(
+        name='results',
+        description='Daylight factor values.',
+        platform=['revit'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_df_from_folder'
+            )
+        ]
+    ),
 
     # Rhino alias
     OutputAlias.linked(
