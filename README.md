@@ -1,5 +1,5 @@
 # pollination-alias
-A collection of input and output aliases for Pollination recipes.
+A collection of input and output aliases for Pollination Recipe's inputs and outputs.
 
 # Installation
 `pip install pollination-alias`
