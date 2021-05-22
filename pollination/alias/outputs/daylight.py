@@ -60,6 +60,27 @@ daylight_factor_results = [
 ]
 
 
+"""Point-in-time grid-based results."""
+point_in_time_grid_results = [
+    OutputAlias.any(
+        name='results',
+        description='Numbers for the point-in-time value at each sensor. Values are '
+        'in the standard SI units of the requested input metric.\n* illuminance = lux'
+        '\n* irradiance = W/m2\n* luminance = cd/m2\n* radiance = W/m2-sr\nThese can be '
+        'plugged into the "LB Spatial Heatmap" component along with meshes of the '
+        'sensor grids to visualize results.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
 """Cumulative sun hours output from the direct sun hours recipe."""
 cumulative_sun_hour_results = [
     OutputAlias.any(
