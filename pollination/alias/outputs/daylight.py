@@ -64,17 +64,41 @@ daylight_factor_results = [
 point_in_time_grid_results = [
     OutputAlias.any(
         name='results',
-        description='Numbers for the point-in-time value at each sensor. Values are '
-        'in the standard SI units of the requested input metric.\n* illuminance = lux'
-        '\n* irradiance = W/m2\n* luminance = cd/m2\n* radiance = W/m2-sr\nThese can be '
+        description='Numbers for the point-in-time value at each sensor. These can be '
         'plugged into the "LB Spatial Heatmap" component along with meshes of the '
-        'sensor grids to visualize results.',
+        'sensor grids to visualize results. Values are in the standard SI '
+        'units of the requested input metric.\n* illuminance = lux'
+        '\n* irradiance = W/m2\n* luminance = cd/m2\n* radiance = W/m2-sr',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""Point-in-time view-based results."""
+point_in_time_view_results = [
+    OutputAlias.any(
+        name='results',
+        description='High Dynamic Range (HDR) images for each View in the model. These '
+        'can be plugged into the Ladybug "Image Viewer" component to preview the image. '
+        'They can also be plugged into the "HB False Color" component to convert '
+        'the image into a false color version. Lastly, it can be connected to '
+        'the "HB HDR to GIF" component to get a GIF image that is more portable '
+        'and easily previewed by different software.Pixel values are '
+        'in the standard SI units of the requested input metric.\n* illuminance = lux'
+        '\n* irradiance = W/m2\n* luminance = cd/m2\n* radiance = W/m2-sr',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_images_from_folder'
             )
         ]
     )
