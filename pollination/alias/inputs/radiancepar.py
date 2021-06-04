@@ -13,8 +13,20 @@ rad_par_annual_input = [
 ]
 
 
-"""Alias for daylight factor radiance parameters."""
+"""Alias for rtrace (daylight factor + PIT) radiance parameters."""
 rad_par_daylight_factor_input = [
+    InputAlias.str(
+        name='radiance_par',
+        description='Text for the radiance parameters to be used for ray tracing. '
+        '(Default: -ab 2 -aa 0.1 -ad 2048 -ar 64).',
+        default='-ab 2 -aa 0.1 -ad 2048 -ar 64',
+        platform=['grasshopper']
+    )
+]
+
+
+"""Alias for rpict (view-based) radiance parameters."""
+rad_par_view_input = [
     InputAlias.str(
         name='radiance_par',
         description='Text for the radiance parameters to be used for ray tracing. '
