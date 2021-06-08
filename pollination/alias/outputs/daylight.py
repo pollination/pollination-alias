@@ -90,7 +90,7 @@ point_in_time_view_results = [
         'They can also be plugged into the "HB False Color" component to convert '
         'the image into a false color version. Lastly, it can be connected to '
         'the "HB HDR to GIF" component to get a GIF image that is more portable '
-        'and easily previewed by different software.Pixel values are '
+        'and easily previewed by different software. Pixel values are '
         'in the standard SI units of the requested input metric.\n* illuminance = lux'
         '\n* irradiance = W/m2\n* luminance = cd/m2\n* radiance = W/m2-sr',
         platform=['grasshopper'],
