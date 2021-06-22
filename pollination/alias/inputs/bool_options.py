@@ -48,6 +48,26 @@ skip_overture_input = [
 ]
 
 
+"""Alias for yes/no inputs about whether glare control devices exist in a model."""
+glare_control_devices_input = [
+    InputAlias.any(
+        name='glare_control',
+        description='A boolean to note whether the model has "view-preserving automatic '
+        '(with manual override) glare-control devices," which means that illuminance '
+        'only needs to be above 300 lux and not between 300 and 3000 lux.',
+        default=True,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='glare_control_devices_to_str'
+            )
+        ]
+    )
+]
+
+
 """Alias for yes/no inputs about whether to use multipliers."""
 use_multiplier_input = [
     InputAlias.any(

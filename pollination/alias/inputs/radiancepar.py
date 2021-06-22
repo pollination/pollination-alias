@@ -37,6 +37,18 @@ rad_par_view_input = [
 ]
 
 
+"""Alias for LEED daylight credit rtrace radiance parameters."""
+rad_par_leed_illuminance_input = [
+    InputAlias.str(
+        name='radiance_par',
+        description='Text for the radiance parameters to be used for ray tracing. '
+        '(Default: -ab 5 -aa 0.1 -ad 2048 -ar 64).',
+        default='-ab 5 -aa 0.1 -ad 2048 -ar 64',
+        platform=['grasshopper']
+    )
+]
+
+
 """Alias for thresholds of annual daylight."""
 daylight_thresholds_input = [
     InputAlias.str(
