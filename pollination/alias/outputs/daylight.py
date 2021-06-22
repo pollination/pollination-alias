@@ -379,3 +379,108 @@ direct_radiation_results = [
         ]
     )
 ]
+
+
+"""LEED Daylight Illuminance 9AM recipe output."""
+illuminance_9am_results = [
+    OutputAlias.any(
+        name='ill_9am',
+        description='Illuminance results for the 9AM simulation in lux.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Illuminance 3PM recipe output."""
+illuminance_3pm_results = [
+    OutputAlias.any(
+        name='ill_3pm',
+        description='Illuminance results for the 3PM simulation in lux.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Pass/Fail 9AM recipe output."""
+pass_fail_9am_results = [
+    OutputAlias.any(
+        name='passing_9am',
+        description='Pass/Fail results for the 9AM simulation as one/zero values.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+"""LEED Daylight Pass/Fail 9AM recipe output."""
+pass_fail_3pm_results = [
+    OutputAlias.any(
+        name='passing_3pm',
+        description='Pass/Fail results for the 3PM simulation as one/zero values.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Pass/Fail combined recipe output."""
+pass_fail_comb_results = [
+    OutputAlias.any(
+        name='passing_comb',
+        description='Pass/Fail results for the combined simulation as one/zero values.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED daylight illuminance credit summary output.
+
+The result is a JSON with a summary of the credits achieved.
+"""
+leed_ill_credit_summary_results = [
+    OutputAlias.any(
+        name='credits',
+        description='The number of LEED daylight credits achieved and a summary of the '
+        'percentage of the sensor grid area that meets the LEED daylight criteria.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='ill_credit_json_from_path'
+            )
+        ]
+    )
+]
