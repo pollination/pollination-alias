@@ -345,10 +345,10 @@ udi_upper_results = [
 ]
 
 
-"""Total Radiation results from the Annual Radiation recipe."""
+"""Total Irradiance results from the Annual Irradiance recipe."""
 total_radiation_results = [
     OutputAlias.any(
-        name='total',
+        name='results',
         description='Raw result files (.ill) that contain irradiance matrices '
         'for the total radiation at each sensor and timestep.',
         platform=['grasshopper'],
@@ -363,7 +363,7 @@ total_radiation_results = [
 ]
 
 
-"""Direct Radiation results from the Annual Radiation recipe."""
+"""Direct Irradiance results from the Annual Irradiance recipe."""
 direct_radiation_results = [
     OutputAlias.any(
         name='direct',
@@ -375,6 +375,62 @@ direct_radiation_results = [
                 language='python',
                 module='pollination_handlers.outputs.daylight',
                 function='sort_ill_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""Average Irradiance from the Annual Irradiance recipe."""
+average_irradiance_results = [
+    OutputAlias.any(
+        name='avg_irr',
+        description='The average irradiance in W/m2 for each sensor over the Wea '
+        'time period.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""Peak Irradiance from the Annual Irradiance recipe."""
+peak_irradiance_results = [
+    OutputAlias.any(
+        name='peak_irr',
+        description='The highest irradiance value in W/m2 during the Wea time period. '
+        'This is suitable for assessing the worst-case solar load of clear skies on '
+        'cooling design days. It can also be used to determine the highest radiant '
+        'temperatures that occupants might experience in over the time period of '
+        'the Wea.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""Peak Irradiance from the Annual Irradiance recipe."""
+cumulative_radiation_results = [
+    OutputAlias.any(
+        name='radiation',
+        description='The cumulative radiation in kWh/m2 over the Wea time period.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_pit_from_folder'
             )
         ]
     )
