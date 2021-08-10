@@ -18,7 +18,7 @@ daylight_factor_results = [
             )
         ]
     ),
-    
+
     # Revit alias
     OutputAlias.any(
         name='results',
@@ -54,6 +54,26 @@ daylight_factor_results = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='LoadMeshBasedResultsToRhino'
+            )
+        ]
+    )
+]
+
+
+"""Alias for sky view recipe output."""
+sky_view_results = [
+    OutputAlias.any(
+        name='results',
+        description='Numbers for the sky view or sky exposure at each sensor. These '
+        'can be plugged into the "LB Spatial Heatmap" component along with meshes of '
+        'the sensor grids to visualize results. Values are in percent (between 0 '
+        'and 100).',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_df_from_folder'
             )
         ]
     )

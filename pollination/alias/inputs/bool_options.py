@@ -131,3 +131,43 @@ write_set_map_input = [
         ]
     )
 ]
+
+
+"""Alias for yes/no inputs about whether to compute sky view or sky exposure."""
+sky_exposure_input = [
+    InputAlias.any(
+        name='exposure',
+        description='A boolean to note whether the output values should be sky view '
+        '(False) or sky exposure (True). Sky View is defined as the percent of the '
+        'sky dome seen by a surface and Sky Exposure is the fraction of the sky '
+        'dome seen by a point. (Default: False)',
+        default=False,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='sky_view_metric_to_str'
+            )
+        ]
+    )
+]
+
+
+"""Alias for yes/no inputs about whether to use a cloudy or uniform sky."""
+cloudy_uniform_input = [
+    InputAlias.any(
+        name='cloudy_sky',
+        description='A boolean to note whether a uniform sky should be used  '
+        '(False) or a cloudy overcast sky (True). (Default: False).',
+        default=False,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='cloudy_bool_to_str'
+            )
+        ]
+    )
+]
