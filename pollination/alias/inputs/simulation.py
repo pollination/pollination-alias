@@ -25,13 +25,13 @@ energy_simulation_parameter_input = [
 
 """Alias for inputs that expect a measures input."""
 measures_input = [
-    InputAlias.list(
+    InputAlias.any(
         name='measures',
         description='An optional list of measures to apply to the OpenStudio model '
         'upon export. Use the "HB Load Measure" component to load a measure into '
         'Grasshopper and assign input arguments. Measures can be downloaded from the '
         'NREL Building Components Library (BCL) at (https://bcl.nrel.gov/).',
-        default=[],
+        default='',
         optional=True,
         platform=['grasshopper'],
         handler=[
@@ -47,14 +47,14 @@ measures_input = [
 
 """Alias for inputs that expect a IDF string input."""
 idf_additional_strings_input = [
-    InputAlias.list(
+    InputAlias.any(
         name='add_str',
         description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
         'An additional text string to be appended to the IDF before '
         'simulation. The input should include complete EnergyPlus objects as a '
         'single string following the IDF format. This input can be used to include '
         'EnergyPlus objects that are not currently supported by honeybee.',
-        default=[],
+        default='',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -69,12 +69,12 @@ idf_additional_strings_input = [
 
 """Alias for inputs that expect visualization variables."""
 viz_variables_input = [
-    InputAlias.list(
+    InputAlias.any(
         name='viz_vars',
         description='A list of text for EnergyPlus output variables to be visualized '
         'on the geometry in an output HTML report. If unspecified, no report is '
         'produced. For example, "Zone Air System Sensible Heating Rate".',
-        default=[],
+        default='',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
