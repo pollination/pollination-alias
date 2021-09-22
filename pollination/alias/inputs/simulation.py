@@ -31,7 +31,7 @@ measures_input = [
         'upon export. Use the "HB Load Measure" component to load a measure into '
         'Grasshopper and assign input arguments. Measures can be downloaded from the '
         'NREL Building Components Library (BCL) at (https://bcl.nrel.gov/).',
-        default='',
+        default=[],
         optional=True,
         platform=['grasshopper'],
         handler=[
@@ -54,7 +54,7 @@ idf_additional_strings_input = [
         'simulation. The input should include complete EnergyPlus objects as a '
         'single string following the IDF format. This input can be used to include '
         'EnergyPlus objects that are not currently supported by honeybee.',
-        default='',
+        default=[],
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
@@ -74,7 +74,7 @@ viz_variables_input = [
         description='A list of text for EnergyPlus output variables to be visualized '
         'on the geometry in an output HTML report. If unspecified, no report is '
         'produced. For example, "Zone Air System Sensible Heating Rate".',
-        default='',
+        default=[],
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
