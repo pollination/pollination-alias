@@ -25,7 +25,7 @@ energy_simulation_parameter_input = [
 
 """Alias for inputs that expect a measures input."""
 measures_input = [
-    InputAlias.any(
+    InputAlias.list(
         name='measures',
         description='An optional list of measures to apply to the OpenStudio model '
         'upon export. Use the "HB Load Measure" component to load a measure into '
@@ -47,7 +47,7 @@ measures_input = [
 
 """Alias for inputs that expect a IDF string input."""
 idf_additional_strings_input = [
-    InputAlias.any(
+    InputAlias.list(
         name='add_str',
         description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
         'An additional text string to be appended to the IDF before '
@@ -69,7 +69,7 @@ idf_additional_strings_input = [
 
 """Alias for inputs that expect visualization variables."""
 viz_variables_input = [
-    InputAlias.any(
+    InputAlias.list(
         name='viz_vars',
         description='A list of text for EnergyPlus output variables to be visualized '
         'on the geometry in an output HTML report. If unspecified, no report is '
