@@ -47,7 +47,7 @@ min_sensor_count_input = [
 ]
 
 
-"""Alias for inputs that set the CPU count by splittin sensor grids."""
+"""Alias for inputs that set the CPU count by splitting sensor grids."""
 cpu_count = [
     InputAlias.int(
         name='cpu_count',
