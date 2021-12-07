@@ -27,7 +27,7 @@ energy_simulation_parameter_input = [
 measures_input = [
     InputAlias.list(
         name='measures',
-        item_type=ItemType.Generic,
+        items_type=ItemType.Generic,
         description='An optional list of measures to apply to the OpenStudio model '
         'upon export. Use the "HB Load Measure" component to load a measure into '
         'Grasshopper and assign input arguments. Measures can be downloaded from the '
@@ -50,7 +50,7 @@ measures_input = [
 idf_additional_strings_input = [
     InputAlias.list(
         name='add_str',
-        item_type=ItemType.String,
+        items_type=ItemType.String,
         description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
         'An additional text string to be appended to the IDF before '
         'simulation. The input should include complete EnergyPlus objects as a '
@@ -73,7 +73,7 @@ idf_additional_strings_input = [
 viz_variables_input = [
     InputAlias.list(
         name='viz_vars',
-        item_type=ItemType.String,
+        items_type=ItemType.String,
         description='A list of text for EnergyPlus output variables to be visualized '
         'on the geometry in an output HTML report. If unspecified, no report is '
         'produced. For example, "Zone Air System Sensible Heating Rate".',
