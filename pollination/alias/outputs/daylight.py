@@ -183,6 +183,23 @@ annual_daylight_results = [
 ]
 
 
+annual_daylight_direct_results = [
+    OutputAlias.any(
+        name='results_direct',
+        description='Raw result files (.ill) that contain matrices for just '
+        'the direct illuminance.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='sort_ill_from_folder'
+            )
+        ]
+    )
+]
+
+
 daylight_autonomy_results = [
     OutputAlias.any(
         name='DA',
