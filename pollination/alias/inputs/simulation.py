@@ -17,6 +17,22 @@ energy_simulation_parameter_input = [
                 language='python',
                 module='pollination_handlers.inputs.simulation',
                 function='energy_sim_par_to_json'
+            ),
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='HBSimulationParameterToJSON'
+            )
+        ]
+    ),
+    # Rhino alias
+    InputAlias.linked(
+        name='sim_par',
+        description='This input links to SimulationParameter setting in Rhino.',
+        platform=['rhino'],
+        handler=[
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='RhinoSimulationParameterToJSON'
             )
         ]
     )
