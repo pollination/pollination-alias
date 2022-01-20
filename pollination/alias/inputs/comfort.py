@@ -29,9 +29,11 @@ wind_speed_input = [
         name='wind_speed',
         description='A single number for meteorological wind speed in m/s or an hourly '
         'data collection of wind speeds that align with the input run period. '
-        'This will be used for all indoor comfort evaluation. Note that the '
-        'EPW wind speed will be used for any outdoor sensors. (Default: 0.5).',
-        default='0.5',
+        'This will be used for all outdoor comfort evaluation. Note that all '
+        'sensors on the indoors will always use a wind speed of 0.5 m/s, '
+        'which is the lowest acceptable value for the UTCI model. If '
+        'unspecified, the EPW wind speed will be used for all outdoor sensors.',
+        default='None',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
