@@ -22,3 +22,27 @@ schedule_csv_input = [
         ]
     )
 ]
+
+
+"""Alias for inputs that expect a schedule as a .csv file from a data collection."""
+comfort_schedule_csv_input = [
+    InputAlias.any(
+        name='schedule',
+        description='A schedule to specify the relevant times during which comfort '
+        'should be evaluated. This must either be a Ladybug Hourly Data '
+        'Collection that aligns with the input run_period or the path to a '
+        'CSV file with a number of rows equal to the length of the run_period. '
+        'If unspecified, it will be assumed that all times are relevant for '
+        'outdoor sensors and the energy model occupancy schedules will be '
+        'used for indoor sensors.',
+        optional=True,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.schedule',
+                function='data_to_csv'
+            )
+        ]
+    )
+]
