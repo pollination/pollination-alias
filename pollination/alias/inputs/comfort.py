@@ -7,16 +7,17 @@ air_speed_input = [
     InputAlias.any(
         name='air_speed',
         description='A single number for air speed in m/s or an hourly data collection '
-        'of air speeds that align with the input run_period. This will be '
+        'of air speeds that align with the input run_period. This can also be a CSV file '
+        'with one air speed per row for each step of the analysis. These values will be '
         'used for all indoor comfort evaluation. Note that the EPW wind speed '
         'will be used for any outdoor sensors. (Default: 0.1).',
-        default='0.1',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_str'
+                function='value_or_data_to_file'
             )
         ]
     )
@@ -28,18 +29,19 @@ wind_speed_input = [
     InputAlias.any(
         name='wind_speed',
         description='A single number for meteorological wind speed in m/s or an hourly '
-        'data collection of wind speeds that align with the input run period. '
-        'This will be used for all outdoor comfort evaluation. Note that all '
+        'data collection of wind speeds that align with the input run period. This can '
+        'also be a CSV file with one wind speed per row for each step of the analysis.'
+        'These values will be used for all outdoor comfort evaluation. Note that all '
         'sensors on the indoors will always use a wind speed of 0.5 m/s, '
         'which is the lowest acceptable value for the UTCI model. If '
         'unspecified, the EPW wind speed will be used for all outdoor sensors.',
-        default='None',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_str'
+                function='value_or_data_to_file'
             )
         ]
     )
@@ -51,15 +53,16 @@ met_rate_input = [
     InputAlias.any(
         name='met_rate',
         description='A single number for metabolic rate in met or an hourly data '
-        'collection of met rates that align with the run period. (Default: 1.1, for '
-        'seated, typing).',
-        default='1.1',
+        'collection of met rates that align with the run period. This can also '
+        'be a CSV file with one met rate per row for each step of the analysis. '
+        '(Default: 1.1, for seated, typing).',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_str'
+                function='value_or_data_to_file'
             )
         ]
     )
@@ -71,15 +74,16 @@ clo_value_input = [
     InputAlias.any(
         name='clo_value',
         description='A single number for clothing level in clo or an hourly data '
-        'collection of clothing levels that align with the run period. (Default: 0.7, '
-        'for pants and a long sleeve shirt).',
-        default='0.7',
+        'collection of clothing levels that align with the run period. This can also '
+        'be a CSV file with one clothing value per row for each step of the analysis.'
+        '(Default: 0.7, for pants and a long sleeve shirt).',
+        optional=True,
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_str'
+                function='value_or_data_to_file'
             )
         ]
     )
