@@ -17,7 +17,7 @@ air_speed_input = [
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_file'
+                function='value_or_data_to_air_speed_file'
             )
         ]
     )
@@ -41,7 +41,7 @@ wind_speed_input = [
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_file'
+                function='value_or_data_to_air_speed_file'
             )
         ]
     )
@@ -62,7 +62,7 @@ met_rate_input = [
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_file'
+                function='value_or_data_to_met_file'
             )
         ]
     )
@@ -83,7 +83,7 @@ clo_value_input = [
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.data',
-                function='value_or_data_to_file'
+                function='value_or_data_to_clo_file'
             )
         ]
     )
