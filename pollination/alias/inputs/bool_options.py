@@ -171,3 +171,26 @@ cloudy_uniform_input = [
         ]
     )
 ]
+
+
+"""Alias for yes/no inputs about whether to use solar or visible."""
+visible_vs_solar_input = [
+    InputAlias.any(
+        name='visible',
+        description='Text for the type of irradiance output, which can be solar (False) '
+        'or visible (True). Note that the output values will still be irradiance (W/m2) '
+        'when visible is selected but these irradiance values will be just for '
+        'the visible portion of the electromagnetic spectrum. The visible '
+        'irradiance values can be converted into illuminance by multiplying them '
+        'by the Radiance luminous efficacy factor of 179. (Default: False).',
+        default=False,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='visible_vs_solar_to_str'
+            )
+        ]
+    )
+]
