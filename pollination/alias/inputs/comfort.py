@@ -7,9 +7,9 @@ air_speed_input = [
     InputAlias.any(
         name='air_speed',
         description='A single number for air speed in m/s or an hourly data collection '
-        'of air speeds that align with the input run_period. This can also be a CSV file '
-        'with one air speed per row for each step of the analysis. These values will be '
-        'used for all indoor comfort evaluation. Note that the EPW wind speed '
+        'of air speeds that align with the input run_period. This can also be a CSV '
+        'file with one air speed per row for each step of the analysis. These values '
+        'will be used for all indoor comfort evaluation. Note that the EPW wind speed '
         'will be used for any outdoor sensors. (Default: 0.1).',
         optional=True,
         platform=['grasshopper'],
