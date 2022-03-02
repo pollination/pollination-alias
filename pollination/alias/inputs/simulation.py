@@ -69,8 +69,8 @@ idf_additional_strings_input = [
         items_type=ItemType.String,
         description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
         'An additional text string to be appended to the IDF before '
-        'simulation. The input should include complete EnergyPlus objects as a '
-        'single string following the IDF format. This input can be used to include '
+        'simulation. The input should include complete EnergyPlus objects '
+        'following the IDF format. This input can be used to include '
         'EnergyPlus objects that are not currently supported by honeybee.',
         default=[],
         platform=['grasshopper'],
@@ -79,6 +79,29 @@ idf_additional_strings_input = [
                 language='python',
                 module='pollination_handlers.inputs.simulation',
                 function='list_to_additional_strings'
+            )
+        ]
+    )
+]
+
+
+"""Alias for inputs that expect a IDF file input."""
+additional_idf_input = [
+    InputAlias.list(
+        name='add_str',
+        items_type=ItemType.String,
+        description='THIS OPTION IS JUST FOR ADVANCED USERS OF ENERGYPLUS. '
+        'An additional text string to be appended to the IDF before '
+        'simulation. The input should include complete EnergyPlus objects '
+        'following the IDF format. This input can be used to include '
+        'EnergyPlus objects that are not currently supported by honeybee.',
+        default=[],
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.simulation',
+                function='list_to_additional_idf'
             )
         ]
     )
