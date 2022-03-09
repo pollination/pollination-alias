@@ -239,3 +239,16 @@ utci_category_output = [
         platform=['grasshopper']
     )
 ]
+
+
+"""Alias for environmental conditions output."""
+env_conditions_output = [
+    OutputAlias.any(
+        name='env_conds',
+        description='A folder containing the environmental conditions that were input '
+        'to the comfort model. These can be loaded into Grasshopper using '
+        'the "HB Read Environment Matrix" component. Load-able metrics include the '
+        'MRT, air temperature, longwave MRT and shortwave MRT delta.',
+        platform=['grasshopper']
+    )
+]
