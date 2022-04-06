@@ -220,7 +220,7 @@ daylight_autonomy_results = [
         name='DA Results',
         platform=['rhino'],
         handler=[
-            # Preload results 
+            # Preload results
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.outputs.daylight',
@@ -376,6 +376,25 @@ udi_upper_results = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='LoadMeshBasedResultsToRhino'
+            )
+        ]
+    )
+]
+
+
+glare_autonomy_results = [
+    OutputAlias.any(
+        name='GA',
+        description='Glare Autonomy (GA) results in percent. GA is the percentage '
+        'of occupied hours that each view is free of glare (with a DGP below the '
+        'glare threshold). These can be plugged into the "LB Spatial Heatmap" '
+        'component along with meshes of the sensor grids to visualize results.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_ga_from_folder'
             )
         ]
     )
