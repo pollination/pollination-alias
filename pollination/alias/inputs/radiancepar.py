@@ -7,7 +7,7 @@ rad_par_annual_input = [
         name='radiance_par',
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -ad 5000 -lw 2e-05).',
-        default='-ab 2 -ad 5000 -lw 2e-05',
+        default='-ab 2 -ad 5000 -lw 2e-05 -dr 0',
         platform=['grasshopper']
     )
 ]
