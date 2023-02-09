@@ -194,3 +194,27 @@ visible_vs_solar_input = [
         ]
     )
 ]
+
+
+"""Alias for yes/no inputs about whether to use building vs. space lighting methods."""
+bldg_lighting_input = [
+    InputAlias.any(
+        name='bldg_lighting',
+        description='A boolean to note whether the building-type should be used to '
+        'assign the baseline lighting power density, which will use the same value '
+        'for all Rooms in the model, or a space-by-space method should be used. '
+        'To use the space-by-space method, the model should either be built '
+        'with the programs that ship with Ladybug Tools in honeybee-energy- '
+        'standards or the baseline_watts_per_area should be correctly '
+        'assigned for all Rooms.',
+        default=False,
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.bool_options',
+                function='bldg_lighting_to_str'
+            )
+        ]
+    )
+]
