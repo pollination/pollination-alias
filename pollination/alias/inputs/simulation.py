@@ -127,3 +127,29 @@ viz_variables_input = [
         ]
     )
 ]
+
+
+"""Alias for energy standards and building vintages."""
+proposed_standard_input = [
+    InputAlias.str(
+        name='proposed_std',
+        description='Text to set the efficiency standard to be used for the proposed '
+        'building. When specified, this will automatically override the efficiencies '
+        'of all HVAC equipment for the proposed standard. Note that '
+        'providing a standard here will cause the OpenStudio translation '
+        'process to perform an additional sizing calculation with EnergyPlus, '
+        'which is needed since the default efficiencies of equipment vary '
+        'depending on their size. The "HB Building Vintages" component has a full '
+        'list of supported HVAC efficiency standards. You can also choose  '
+        'from the following:DOE_Ref_Pre_1980, DOE_Ref_1980_2004, ASHRAE_2004, '
+        'ASHRAE_2007, ASHRAE_2010, ASHRAE_2013, ASHRAE_2016, ASHRAE_2019',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.simulation',
+                function='standard_to_str'
+            )
+        ]
+    )
+]
