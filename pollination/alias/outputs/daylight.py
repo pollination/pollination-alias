@@ -596,3 +596,75 @@ leed_ill_credit_summary_results = [
         ]
     )
 ]
+
+
+"""LEED Daylight Option I credit summary output."""
+leed_one_credit_summary_results = [
+    OutputAlias.any(
+        name='credit_summary',
+        description='The number of LEED daylight credits achieved and a summary '
+        'of the sDA and ASE of all sensor grids combined.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='ill_credit_json_from_path'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Option I hours above direct illuminance output."""
+leed_one_ase_hours_above_results = [
+    OutputAlias.any(
+        name='ase_hours_above',
+        description='The number of hours above the direct illuminance threshold. '
+        'of the sDA and ASE of all sensor grids combined.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_hours_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Option I hourly percentage above direct illuminance output."""
+leed_one_hourly_pct_above_results = [
+    OutputAlias.any(
+        name='hourly_percentage_above',
+        description='The hourly percentage of floor area where the direct '
+        'illuminance is 1000 lux or higher.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_leed_datacollection_from_folder'
+            )
+        ]
+    )
+]
+
+
+"""LEED Daylight Option I shade transmittance schedule output."""
+leed_one_shade_transmittance_results = [
+    OutputAlias.any(
+        name='dynamic_schedule',
+        description='JSON file containing the dynamic schedule of shade '
+        'transmittance values for each hour.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_leed_shade_transmittance_schedule'
+            )
+        ]
+    )
+]
