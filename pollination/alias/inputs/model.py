@@ -10,7 +10,7 @@ hbjson_model_input = [
         description='A Honeybee Model to simulate or the path to a HBJSON file '
         'of a Model. This can also be the path to a HBpkl file, though this is only '
         'recommended for cases where the model is extremely large.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -19,18 +19,6 @@ hbjson_model_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )
@@ -46,7 +34,7 @@ hbjson_model_grid_input = [
         'of a Model. This can also be the path to a HBpkl file, though this is only '
         'recommended for cases where the model is extremely large. Note that this '
         'model should have sensor grids assigned to it.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -55,18 +43,6 @@ hbjson_model_grid_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )
@@ -81,7 +57,7 @@ hbjson_model_grid_room_input = [
         description='A Honeybee Model to simulate or the path to a HBJSON file '
         'of a Model. Note that this model must contain rooms and have sensor '
         'grids assigned to it.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -90,18 +66,6 @@ hbjson_model_grid_room_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )
@@ -117,7 +81,7 @@ hbjson_model_room_input = [
         'of a Model. This can also be the path to a HBpkl file, though this is only '
         'recommended for cases where the model is extremely large. Note that this '
         'model should have Rooms assigned to it to be usable with this recipe.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -126,18 +90,6 @@ hbjson_model_room_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )
@@ -154,7 +106,7 @@ hbjson_model_hvac_input = [
         'have Programs, ConstructionSets, and real HVAC systems (other than Ideal Air) '
         'assigned to it. If the building has hot water loads, the building should also '
         'have a SHW system assigned to it for the results to be meaningful.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -163,18 +115,6 @@ hbjson_model_hvac_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )
@@ -190,7 +130,7 @@ hbjson_model_view_input = [
         'of a Model. This can also be the path to a HBpkl file, though this is only '
         'recommended for cases where the model is extremely large. Note that this '
         'model should have views assigned to it.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -199,18 +139,6 @@ hbjson_model_view_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
-            )
-        ]
-    ),
-    # Rhino alias
-    InputAlias.linked(
-        name='model',
-        description='This input links the model to Rhino model.',
-        platform=['rhino'],
-        handler=[
-            IOAliasHandler(
-                language='csharp', module='Pollination.RhinoHandlers',
-                function='RhinoHBModelToJSON'
             )
         ]
     )

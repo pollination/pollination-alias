@@ -8,7 +8,7 @@ wea_input = [
         name='wea',
         description='A Wea object produced from the Wea components that are under '
         'the Light Sources tab. This can also be the path to a .wea or a .epw file.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python',
@@ -26,7 +26,7 @@ wea_input_timestep_check = [
         name='wea',
         description='A Wea object produced from the Wea components that are under '
         'the Light Sources tab. This can also be the path to a .wea or a .epw file.',
-        platform=['grasshopper'],
+        platform=['grasshopper', 'rhino', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python',
