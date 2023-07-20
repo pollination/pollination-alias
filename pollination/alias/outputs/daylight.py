@@ -668,3 +668,20 @@ leed_one_shade_transmittance_results = [
         ]
     )
 ]
+
+
+"""Grid metrics output."""
+grid_metrics_results = [
+    OutputAlias.any(
+        name='grid_metrics',
+        description='CSV file with grid metrics.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_grid_metrics'
+            )
+        ]
+    )
+]
