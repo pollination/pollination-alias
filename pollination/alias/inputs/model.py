@@ -47,7 +47,7 @@ hbjson_model_grid_input = [
         'of a Model. This can also be the path to a HBpkl file, though this is only '
         'recommended for cases where the model is extremely large. Note that this '
         'model should have sensor grids assigned to it.',
-        platform=['grasshopper', 'rhino'],
+        platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python', module='pollination_handlers.inputs.model',
@@ -56,6 +56,17 @@ hbjson_model_grid_input = [
             IOAliasHandler(
                 language='csharp', module='Pollination.RhinoHandlers',
                 function='HBModelToJSON'
+            )
+        ]
+    ),
+    InputAlias.linked(
+        name='model',
+        description='This input links the model to Rhino model.',
+        platform=['rhino'],
+        handler=[
+            IOAliasHandler(
+                language='csharp', module='Pollination.RhinoHandlers',
+                function='RhinoHBModelToJSON'
             )
         ]
     ),
