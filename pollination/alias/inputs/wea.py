@@ -8,12 +8,25 @@ wea_input = [
         name='wea',
         description='A Wea object produced from the Wea components that are under '
         'the Light Sources tab. This can also be the path to a .wea or a .epw file.',
-        platform=['grasshopper', 'rhino', 'revit'],
+        platform=['grasshopper', 'revit'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.inputs.wea',
                 function='wea_handler'
+            )
+        ]
+    ),
+    InputAlias.linked(
+        name='wea',
+        description='A Wea object produced from the Wea components that are under '
+        'the Light Sources tab. This can also be the path to a .wea or a .epw file.',
+        platform=['rhino'],
+        handler=[
+            IOAliasHandler(
+                language='csharp',
+                module='Pollination.RhinoHandlers',
+                function='RhinoModelProjectInfoWeather'
             )
         ]
     )

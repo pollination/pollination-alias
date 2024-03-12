@@ -18,5 +18,20 @@ north_input = [
                 function='north_vector_to_angle'
             )
         ]
-    )
+    ),
+    InputAlias.linked(
+        name='north',
+        description='A number between -360 and 360 for the counterclockwise difference '
+        'between the North and the positive Y-axis in degrees. This can '
+        'also be Vector for the direction to North. (Default: 0).',
+        default=0,
+        platform=['rhino'],
+        handler=[
+            IOAliasHandler(
+                language='csharp',
+                module='Pollination.RhinoHandlers',
+                function='RhinoModelProjectInfoNorth'
+            )
+        ]
+    ),
 ]
