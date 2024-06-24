@@ -616,6 +616,23 @@ leed_one_credit_summary_results = [
 ]
 
 
+"""LEED Daylight Option I summary grid output."""
+leed_one_summary_grid_results = [
+    OutputAlias.any(
+        name='grid_summary',
+        description='Summary of each grid including ASE and sDA.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_leed_summary_grid'
+            )
+        ]
+    )
+]
+
+
 """LEED Daylight Option I hours above direct illuminance output."""
 leed_one_ase_hours_above_results = [
     OutputAlias.any(
