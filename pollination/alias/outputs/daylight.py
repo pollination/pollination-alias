@@ -702,3 +702,37 @@ grid_metrics_results = [
         ]
     )
 ]
+
+
+"""BREEAM 4b summary output."""
+breeam_summary = [
+    OutputAlias.any(
+        name='summary',
+        description='JSON file with summary.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_summary_list'
+            )
+        ]
+    )
+]
+
+
+"""BREEAM 4b program summary output."""
+breeam_program_summary = [
+    OutputAlias.any(
+        name='program_summary',
+        description='JSON file with program summary.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_summary_list'
+            )
+        ]
+    )
+]
