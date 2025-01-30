@@ -736,3 +736,37 @@ breeam_program_summary = [
         ]
     )
 ]
+
+
+"""WELL L01 Daylight summary output."""
+well_l01_summary = [
+    OutputAlias.any(
+        name='l01-summary',
+        description='JSON file with summary.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_summary_list'
+            )
+        ]
+    )
+]
+
+
+"""WELL L06 Daylight summary output."""
+well_l06_summary = [
+    OutputAlias.any(
+        name='l06-summary',
+        description='JSON file with summary.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_summary_list'
+            )
+        ]
+    )
+]
