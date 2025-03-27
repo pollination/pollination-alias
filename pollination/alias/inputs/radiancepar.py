@@ -1,4 +1,6 @@
 from pollination_dsl.alias import InputAlias
+from queenbee.io.common import IOAliasHandler
+
 
 
 """Alias for annual daylight/radiation radiance parameters."""
@@ -8,7 +10,14 @@ rad_par_annual_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -ad 5000 -lw 2e-05).',
         default='-ab 2 -ad 5000 -lw 2e-05 -dr 0',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.radiancepar',
+                function='validate_rfluxmtx_params'
+            )
+        ]
     )
 ]
 
@@ -20,7 +29,14 @@ rad_par_daylight_factor_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -aa 0.1 -ad 2048 -ar 64).',
         default='-ab 2 -aa 0.1 -ad 2048 -ar 64',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.radiancepar',
+                function='validate_rtrace_params'
+            )
+        ]
     )
 ]
 
@@ -32,7 +48,14 @@ rad_par_sky_view_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -aa 0.1 -ad 2048 -ar 64).',
         default='-aa 0.1 -ad 2048 -ar 64',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.radiancepar',
+                function='validate_rtrace_params'
+            )
+        ]
     )
 ]
 
@@ -44,7 +67,14 @@ rad_par_view_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 2 -aa 0.1 -ad 2048 -ar 64).',
         default='-ab 2 -aa 0.1 -ad 2048 -ar 64',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.radiancepar',
+                function='validate_rpict_params'
+            )
+        ]
     )
 ]
 
@@ -56,7 +86,14 @@ rad_par_leed_illuminance_input = [
         description='Text for the radiance parameters to be used for ray tracing. '
         '(Default: -ab 5 -aa 0.1 -ad 2048 -ar 64).',
         default='-ab 5 -aa 0.1 -ad 2048 -ar 64',
-        platform=['grasshopper']
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.inputs.radiancepar',
+                function='validate_rtrace_params'
+            )
+        ]
     )
 ]
 
