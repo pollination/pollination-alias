@@ -770,3 +770,20 @@ well_l06_summary = [
         ]
     )
 ]
+
+
+"""EN17037 Daylight summary output."""
+en17037_summary = [
+    OutputAlias.any(
+        name='en17037-summary',
+        description='JSON file with summary.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_summary_list'
+            )
+        ]
+    )
+]
