@@ -787,3 +787,20 @@ en17037_summary = [
         ]
     )
 ]
+
+
+"""EN 17037 daylight hours occupancy schedule."""
+daylight_hours = [
+    OutputAlias.any(
+        name='daylight-hours',
+        description='JSON file containing a data collection for daylight hours.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_hourly_continuous_collection_from_json'
+            )
+        ]
+    )
+]
