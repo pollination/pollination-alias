@@ -543,6 +543,7 @@ pass_fail_9am_results = [
     )
 ]
 
+
 """LEED Daylight Pass/Fail 9AM recipe output."""
 pass_fail_3pm_results = [
     OutputAlias.any(
@@ -577,11 +578,11 @@ pass_fail_comb_results = [
 ]
 
 
-"""LEED daylight illuminance credit summary output.
+"""LEED II credit summary output.
 
 The result is a JSON with a summary of the credits achieved.
 """
-leed_ill_credit_summary_results = [
+leed_two_credit_summary = [
     OutputAlias.any(
         name='credits',
         description='The number of LEED daylight credits achieved and a summary of the '
@@ -598,18 +599,17 @@ leed_ill_credit_summary_results = [
 ]
 
 
-"""LEED Daylight Option I credit summary output."""
-leed_one_credit_summary_results = [
+"""LEED II summary grid."""
+leed_two_summary_grid = [
     OutputAlias.any(
-        name='credit_summary',
-        description='The number of LEED daylight credits achieved and a summary '
-        'of the sDA and ASE of all sensor grids combined.',
+        name='summary-grid',
+        description='CSV file with summary grid data.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
                 language='python',
                 module='pollination_handlers.outputs.daylight',
-                function='ill_credit_json_from_path'
+                function='read_csv_summary_formatted'
             )
         ]
     )
