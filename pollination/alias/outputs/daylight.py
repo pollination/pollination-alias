@@ -776,7 +776,24 @@ well_l06_summary = [
 en17037_summary = [
     OutputAlias.any(
         name='en17037-summary',
-        description='JSON file with summary.',
+        description='JSON file with summary of whole model.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_dict'
+            )
+        ]
+    )
+]
+
+
+"""EN17037 Daylight summary output."""
+en17037_summary_grid = [
+    OutputAlias.any(
+        name='en17037-summary-grid',
+        description='JSON file with summary per grid.',
         platform=['grasshopper'],
         handler=[
             IOAliasHandler(
