@@ -616,6 +616,24 @@ leed_two_summary_grid = [
 ]
 
 
+"""LEED Daylight Option I credit summary output."""
+leed_one_credit_summary_results = [
+    OutputAlias.any(
+        name='credit_summary',
+        description='The number of LEED daylight credits achieved and a summary '
+        'of the sDA and ASE of all sensor grids combined.',
+        platform=['grasshopper'],
+        handler=[
+            IOAliasHandler(
+                language='python',
+                module='pollination_handlers.outputs.daylight',
+                function='read_json_dict'
+            )
+        ]
+    )
+]
+
+
 """LEED Daylight Option I summary grid output."""
 leed_one_summary_grid_results = [
     OutputAlias.any(
